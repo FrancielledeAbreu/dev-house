@@ -5,10 +5,7 @@
 node_modules/
 dist/
 
-build/
-*.html
-*.css
-*.js
+
 
 config.js
 
