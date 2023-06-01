@@ -1,32 +1,42 @@
 const { createMenu } = require("./index");
 
 describe("createMenu", () => {
-  let menuContainer;
-  let menuItems;
+  test("Should create DOM elements correctly", () => {
+    const container = document.createElement("div");
+    container.id = "menu";
+    document.body.appendChild(container);
 
-  beforeEach(() => {
-    document.body.innerHTML = '<div id="menu"></div>';
-    menuContainer = document.getElementById("menu");
-    menuItems = [
-      { text: "Todos os remédios", link: "index.html" },
-      { text: "Fale conosco", link: "contato.html" },
-      { text: "Sobre nós", link: "#" },
-    ];
-  });
-
-  test("Should create menu correctly", () => {
     createMenu();
 
-    const ul = menuContainer.querySelector("ul");
-    expect(ul).not.toBeNull();
+    expect(container.innerHTML).toContain("<ul>");
+    expect(container.innerHTML).toContain(
+      '<li><a href="index.html">Todos os remédios</a></li>'
+    );
+    expect(container.innerHTML).toContain(
+      '<li><a href="contato.html">Fale conosco</a></li>'
+    );
+    expect(container.innerHTML).toContain('<li><a href="#">Sobre nós</a></li>');
+  });
 
-    const liElements = menuContainer.querySelectorAll("li");
-    expect(liElements.length).toBe(3);
+  test("Should have working links", () => {
+    const container = document.createElement("div");
+    container.id = "menu";
+    document.body.appendChild(container);
 
-    const linkElements = menuContainer.querySelectorAll("a");
-    linkElements.forEach((link, index) => {
-      const menuItem = menuItems[index];
-      expect(link.href).toContain(menuItem.link);
-    });
+    createMenu();
+    const allMedicinesLink = document.querySelector(
+      "#menu a[href='index.html']"
+    );
+    const contactUsLink = document.querySelector(
+      "#menu a[href='contato.html']"
+    );
+    const aboutUsLink = document.querySelector("#menu a[href='#']");
+
+    expect(allMedicinesLink.getAttribute("href")).toBe("index.html");
+    expect(contactUsLink.getAttribute("href")).toBe("contato.html");
+    expect(aboutUsLink.getAttribute("href")).toBe("#");
+    expect(allMedicinesLink.href).toContain("index.html");
+    expect(contactUsLink.href).toContain("contato.html");
+    expect(aboutUsLink.href).toContain(window.location.href);
   });
 });

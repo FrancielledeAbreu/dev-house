@@ -7,17 +7,30 @@
 
 <body>
   <header>
-    <nav id="menu"></nav>
     <script src="menu/index.js"></script>
+    <script src="card/index.js"></script>
+    </header>
+    <main>
+      <nav id="menu"></nav>
+      <div id="medicine"></div>
+    </main>
     <script>
       document.addEventListener("DOMContentLoaded", createMenu);
+      document.addEventListener("DOMContentLoaded", () => {
+          const medicines = [
+            {
+              image: "imagem1.jpg",
+              title: "medicine 1",
+              value: "R$ 100,00",
+            },
+            {
+              image: "imagem2.jpg",
+              title: "medicine 2",
+              value: "R$ 50,00",
+            }
+          ];
+          createCards(medicines);
+        });
     </script>
-  </header>
-
-  <main>
-  </main>
-
-
 </body>
-
 </html>

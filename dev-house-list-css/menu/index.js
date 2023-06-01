@@ -1,5 +1,5 @@
 const createMenu = () => {
-  const menuContainer = document.getElementById("menu");
+  const container = document.getElementById("menu");
   const ul = document.createElement("ul");
 
   const menuItems = [
@@ -14,7 +14,7 @@ const createMenu = () => {
     ul.appendChild(li);
   });
 
-  menuContainer.appendChild(ul);
+  container.appendChild(ul);
 };
 
 if (typeof module !== "undefined" && module.exports) {
