@@ -25,7 +25,7 @@ describe("createCard", () => {
 
     expect(container.innerHTML).toContain('<img src="imagem.jpg">');
     expect(container.innerHTML).toContain("<h2>medicine</h2>");
-    expect(container.innerHTML).toContain("<p>R$ 10,00</p>");
+    expect(container.innerHTML).toContain("<span>R$ 10,00</span>");
   });
 });
 
@@ -53,10 +53,10 @@ describe("createCards", () => {
 
     expect(card1.innerHTML).toContain('<img src="imagem1.jpg">');
     expect(card1.innerHTML).toContain("<h2>medicine 1</h2>");
-    expect(card1.innerHTML).toContain("<p>R$ 10,00</p>");
+    expect(card1.innerHTML).toContain("<span>R$ 10,00</span>");
 
     expect(card2.innerHTML).toContain('<img src="imagem2.jpg">');
     expect(card2.innerHTML).toContain("<h2>medicine 2</h2>");
-    expect(card2.innerHTML).toContain("<p>R$ 20,00</p>");
+    expect(card2.innerHTML).toContain("<span>R$ 20,00</span>");
   });
 });
