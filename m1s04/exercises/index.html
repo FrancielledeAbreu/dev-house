@@ -7,20 +7,35 @@
 </head>
 
 <body>
-  <h1>Cálculo da Média</h1>
+  <div id="calculator">
+    <h1>Cálculo da Média</h1>
 
-  <label for="value_one">Valor 1:</label>
-  <input type="text" id="value_one">
+    <label for="value_one">Valor 1:</label>
+    <input type="text" id="value_one">
 
-  <label for="value_two">Valor 2:</label>
-  <input type="text" id="value_two">
+    <label for="value_two">Valor 2:</label>
+    <input type="text" id="value_two">
 
-  <label for="value_tree">Valor 3:</label>
-  <input type="text" id="value_tree">
+    <label for="value_tree">Valor 3:</label>
+    <input type="text" id="value_tree">
 
-  <button onclick="returnMedia()">Calcular</button>
+    <button onclick="returnMedia()">Calcular</button>
+    <div id="result"></div>
+  </div>
 
-  <div id="result"></div>
+  <div id="imc">
+    <h1>Cálculo do IMC</h1>
+
+    <label for="weight">Peso:</label>
+    <input type="text" id="weight">
+
+    <label for="height">Altura:</label>
+    <input type="text" id="height">
+
+    <button onclick="returnIMC()">Calcular</button>
+    <div id="result_imc"></div>
+  </div>
+
 
 </body>
 </html>
