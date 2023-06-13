@@ -30,7 +30,7 @@ const createCard = (data) => {
     button.classList.add("button-active");
     setTimeout(() => {
       button.classList.remove("button-active");
-    }, 1000);
+    }, 500);
   });
 
   if (container) {

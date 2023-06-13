@@ -1,8 +1,57 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #293241;
+}
+
+#menu {
+  display: flex;
+  justify-content: center;
+  background-color: #f2f2f2;
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+}
+
+#menu ul {
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+}
+
+#menu li {
+  margin: 0 10px;
+}
+
+#menu a {
+  text-decoration: none;
+  color: #333333;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#menu a:hover {
+  background-color: #d9d9d9;
+  color: #ffffff;
+}
+
+#menu a:visited {
+  color: #333333;
+}
+
+#menu a.active {
+  background-color: #02be3b;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+
 #medicine {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 80%;
+  width: 100%;
 }
 
 .card {
@@ -14,7 +63,7 @@
   text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   width: 175px;
-  margin: 0.5%;
+  margin: 1.3%;
 }
 
 .description {
@@ -67,9 +116,15 @@
   bottom: -2px;
   border: 1px solid #02be3b;
   border-radius: 6px;
-  transition: border-color 0.3s ease;
+
 }
 
 .card button.button-active:before {
   border-color: #ffffff;
+}
+
+.card button.button-active {
+  background-color: #02be3b;
+  color: #ffffff;
+    transition: border-color 0.3s ease;
 }
